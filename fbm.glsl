@@ -5,7 +5,7 @@
 // @param timeShift Time shift for each octave, range: [-inf, inf]
 // @param gain Gain for each fbm octave, range: [0, 2], default: 0.5
 // @param lacunarity Frequency of the fbm, must be integer for tileable results, range: [1, 32]
-// @param octaveFactor The octave intensity factor, the lower the more pronounced the lower octaves will be, range: [-1, 1], default: 0.0
+// @param octaveFactor The octave intensity factor, the lower the more pronounced the higher octaves will be, range: [-1, 1], default: 0.0
 // @param seed Seed to randomize result, range: [0, inf], default: 0.0
 // @return value of the noise, range: [0, inf]
 float fbm(vec2 pos, vec2 scale, int octaves, float shift, float timeShift, float gain, float lacunarity, float octaveFactor, float seed) 
@@ -42,7 +42,7 @@ float fbm(vec2 pos, vec2 scale, int octaves, float shift, float timeShift, float
 // @param gain Gain for each fbm octave, range: [0, 2], default: 0.5
 // @param lacunarity Frequency of the fbm, must be integer for tileable results, range: [1, 32], default: 2.0
 // @param slopeness Slope intensity of the derivatives, range: [0, 1], default: 0.5
-// @param octaveFactor The octave intensity factor, the lower the more pronounced the lower octaves will be, range: [-1, 1], default: 0.0
+// @param octaveFactor The octave intensity factor, the lower the more pronounced the higher octaves will be, range: [-1, 1], default: 0.0
 // @param seed Seed to randomize result, range: [0, inf], default: 0.0
 // @return x = value of the noise, range: [0, inf], yz = derivative of the noise, range: [-1, 1]
 vec3 fbmd(vec2 pos, vec2 scale, int octaves, vec2 shift, float timeShift, float gain, vec2 lacunarity, float slopeness, float octaveFactor, float seed) 
@@ -94,7 +94,7 @@ vec3 fbmd(vec2 pos, vec2 scale, int octaves, vec2 shift, float timeShift, float 
 // @param gain Gain for each fbm octave, range: [0, 2], default: 0.5
 // @param lacunarity Frequency of the fbm, must be integer for tileable results, range: [1, 32], default: 2.0
 // @param slopeness Slope intensity of the derivatives, range: [0, 1], default: 0.25
-// @param octaveFactor The octave intensity factor, the lower the more pronounced the lower octaves will be, range: [-1, 1], default: 0.0
+// @param octaveFactor The octave intensity factor, the lower the more pronounced the higher octaves will be, range: [-1, 1], default: 0.0
 // @param negative If true use a negative range for the noise values, will result in more contrast, range: [false, true]
 // @param seed Seed to randomize result, range: [0, inf], default: 0.0
 // @return x = value of the noise, range: [-1, inf], yz = derivative of the noise, range: [-1, 1]
@@ -142,7 +142,7 @@ vec3 fbmdPerlin(vec2 pos, vec2 scale, int octaves, vec2 shift, float axialShift,
 // @param mode Mode used in combining the noise for the ocatves, range: [0, 5]
 // @param factor Pow intensity factor, range: [0, 10], default: 1.0
 // @param offset Offsets the value of the noise, range: [-1, 1], default: 0.0
-// @param octaveFactor The octave intensity factor, the lower the more pronounced the lower octaves will be, range: [-1, 1], default: 0.0
+// @param octaveFactor The octave intensity factor, the lower the more pronounced the higher octaves will be, range: [-1, 1], default: 0.0
 // @param seed Seed to randomize result, range: [0, inf], default: 0.0
 // @return value of the noise, range: [0, inf]
 float fbmPerlin(vec2 pos, vec2 scale, int octaves, float shift, float axialShift, float gain, float lacunarity, uint mode, float factor, float offset, float octaveFactor, float seed) 
@@ -200,7 +200,7 @@ float fbmPerlin(vec2 pos, vec2 scale, int octaves, float shift, float axialShift
 // @param timeShift Time shift for each octave, range: [-inf, inf]
 // @param gain Gain for each fbm octave, range: [0, 2], default: 0.5
 // @param lacunarity Frequency of the fbm, must be integer for tileable results, range: [1, 32]
-// @param octaveFactor The octave intensity factor, the lower the more pronounced the lower octaves will be, range: [-1, 1], default: 0.0
+// @param octaveFactor The octave intensity factor, the lower the more pronounced the higher octaves will be, range: [-1, 1], default: 0.0
 // @param jitter Jitter factor for the cells, if zero then it will result in a square grid, range: [0, 1], default: 1.0
 // @param interpolate Interpolate factor between the multiplication mode and normal mode, default: 0.0
 // @param seed Seed to randomize result, range: [0, inf], default: 0.0
@@ -245,7 +245,7 @@ vec4 fbmVoronoi(vec2 pos, vec2 scale, int octaves, float shift, float timeShift,
 // @param lacunarity Frequency of the fbm, must be integer for tileable results, range: [1, 32]
 // @param translate Translate factors for the value noise , range: [-inf, inf], default: {0.5, -0.25, 0.15}
 // @param warpStrength The warp factor used for domain warping, range: [-10, 10], default: 0.5
-// @param octaveFactor The octave intensity factor, the lower the more pronounced the lower octaves will be, range: [-1, 1], default: 0.0
+// @param octaveFactor The octave intensity factor, the lower the more pronounced the higher octaves will be, range: [-1, 1], default: 0.0
 // @param seed Seed to randomize result, range: [0, inf], default: 0.0
 // @return value of the noise, range: [0, inf]
 float fbmGrid(vec2 pos, vec2 scale, int octaves, float shift, float timeShift, float gain, float lacunarity, vec3 translate, float warpStrength, float octaveFactor, float seed) 
@@ -295,7 +295,7 @@ float fbmGrid(vec2 pos, vec2 scale, int octaves, float shift, float timeShift, f
 // @param timeShift Time shift for each octave, range: [-inf, inf]
 // @param gain Gain for each fbm octave, range: [0, 2], default: 0.5
 // @param lacunarity Frequency of the fbm, must be integer for tileable results, range: [1, 32]
-// @param octaveFactor The octave intensity factor, the lower the more pronounced the lower octaves will be, range: [-1, 1], default: 0.0
+// @param octaveFactor The octave intensity factor, the lower the more pronounced the higher octaves will be, range: [-1, 1], default: 0.0
 // @param interpolate Interpolate factor between the multiplication mode and normal mode, default: 0.0
 // @param jitter Jitter factor for the cells, if zero then it will result in a square grid, range: [0, 1], default: 1.0
 // @param width Width and softness of the metaballs, range: [0, 1], default: {0.1, 0.01}
