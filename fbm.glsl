@@ -111,9 +111,9 @@ vec3 fbmdPerlin(vec2 pos, vec2 scale, int octaves, vec2 shift, mat2 transform, f
     for (int i = 0; i < octaves; i++) 
     {
         vec3 n = perlinNoised(p / frequency, frequency, transform, seed);
-        derivative += n.yz;
         n.x = negative ? n.x : n.x * 0.5 + 0.5;
         n *= amplitude;
+        derivative += n.yz; // need the cumulative derivative for following computations
         value.x += n.x / (1.0 + mix(0.0, dot(derivative, derivative), slopeness));
         value.yz += n.yz; 
         
